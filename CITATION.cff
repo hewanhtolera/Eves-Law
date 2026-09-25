@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+title: "Eve's Law: The Reach Failure Codebook"
+message: "If you use this scheme or dataset, please cite it and state the codebook version you coded against."
+type: dataset
+authors:
+  - given-names: Hewan
+    family-names: Tolera
+    affiliation: University of Maryland
+version: "1.0"
+date-released: "2026-09-25"
+license: CC-BY-4.0
+repository-code: "https://github.com/USERNAME/eves-law"
+abstract: >-
+  A coding scheme and dataset recording AI deployment harms that existing
+  law could not reach, and the regulatory instrument that would have reached
+  each one. Six fields record the system's structural position, its effect on
+  human discretion, the stakes and their bearer, the mechanical failure mode,
+  the specific doctrinal element that prevented a remedy, and the layer at
+  which a fix would bind.
+keywords:
+  - AI governance
+  - algorithmic accountability
+  - regulatory design
+  - deployment harm
+  - liability

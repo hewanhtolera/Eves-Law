@@ -1,0 +1,133 @@
+{
+  "schema": "reach-failure-codebook",
+  "version": "1.0",
+  "updated": "2026-09-25",
+  "license": "CC-BY-4.0",
+  "multi_value_separator": ";",
+  "universal_value": {
+    "unresolved": "Sources do not settle this field. Permitted in every field. The open question must be stated in the record."
+  },
+  "fields": {
+    "f1_position": {
+      "label": "Position",
+      "cardinality": "one",
+      "question": "What did the system's output do, structurally, in the chain of action?",
+      "values": {
+        "retrieve": "Returned matching records from a store in response to a query",
+        "flag": "Surfaced an item for human attention",
+        "filter": "Removed or suppressed items before a human saw them",
+        "generate": "Produced new content",
+        "distribute": "Selected who received something",
+        "decide": "Produced an outcome applied without human review"
+      }
+    },
+    "f2_discretion": {
+      "label": "Discretion",
+      "novel": true,
+      "cardinality": "one",
+      "question": "What did the system do to the judgment of the person holding power over the subject?",
+      "values": {
+        "expanded": "Gave a human confidence or cover to act in a way they could not otherwise have justified",
+        "checked": "Constrained or audited a human decision",
+        "replaced": "Substituted for a decision previously made by a person",
+        "none": "No human discretion implicated"
+      },
+      "test": "Would the human's action have survived review on the non-AI evidence alone? If no, and the action was taken, code expanded."
+    },
+    "f3_reversibility": {
+      "label": "Stakes — reversibility",
+      "cardinality": "one",
+      "values": {
+        "reversible": "Subject's position can be restored",
+        "costly": "Restoration possible at significant cost",
+        "irreversible": "No later correction restores the subject's position"
+      }
+    },
+    "f3_bearer": {
+      "label": "Stakes — bearer",
+      "cardinality": "one",
+      "values": {
+        "user": "The person operating the system",
+        "subject": "The person the system operated on, in a relationship with the deployer",
+        "third party": "The person the system operated on, with no relationship to the deployer"
+      }
+    },
+    "f3_awareness": {
+      "label": "Stakes — awareness",
+      "cardinality": "one",
+      "values": {
+        "informed": "Bearer knew the system operated on them and could contest before effect",
+        "unaware": "Bearer had no notice or no mechanism to contest"
+      }
+    },
+    "f4_failure_mode": {
+      "label": "Failure mode",
+      "cardinality": "many",
+      "values": {
+        "false positive": "Asserted something not true",
+        "false negative": "Failed to assert something true",
+        "inference chain": "Outputs accurate; the chain of inference built on them was not",
+        "routing": "Output reached the wrong party, or failed to reach the right one",
+        "threshold": "Sensitivity setting excluded the harm",
+        "taxonomy gap": "Harm outside the categories the system recognised",
+        "absence": "Harm occurred because no system was watching where one was available, affordable and effective"
+      },
+      "novel_values": ["absence"],
+      "absence_threshold": [
+        "Capability technically available at the time",
+        "Low cost relative to the harm",
+        "Not deployed"
+      ]
+    },
+    "f5_reach_failure": {
+      "label": "Reach failure",
+      "cardinality": "many",
+      "jurisdiction": "US",
+      "values": {
+        "no cause of action": "No recognised claim covers this harm",
+        "element missing": "A claim exists but fails at a named element — the element must be named in the record",
+        "immunity": "A defendant is shielded (qualified, sovereign, statutory)",
+        "not a state actor": "Private defendant outside a public-law remedy",
+        "no defect": "Product performed as designed, defeating product liability",
+        "safe harbor": "Statutory immunity applies",
+        "no private right": "Statute governs the conduct but creates no private enforcement",
+        "no detection": "Harm structurally undiscoverable by the person harmed",
+        "preemption": "Higher jurisdiction has displaced the applicable rule"
+      }
+    },
+    "f6_intervention_layer": {
+      "label": "Intervention layer",
+      "cardinality": "many",
+      "values": {
+        "model": "Training, evaluation or accuracy requirements",
+        "configuration": "Settings within an existing deployment",
+        "deployment rule": "Use policy or statute governing how output may be acted on",
+        "procurement standard": "Contract terms required at acquisition",
+        "logging duty": "Recorded, auditable trail",
+        "liability allocation": "Statute assigning responsibility between developer and deployer",
+        "disclosure": "Notice to subjects, or published failure analysis",
+        "enforcement authority": "Granting a regulator or AG power to act"
+      }
+    },
+    "model_performed_as_designed": {
+      "label": "Model performed as designed",
+      "type": "boolean",
+      "derived_from": "f4_failure_mode",
+      "note": "True where no component malfunctioned and harm occurred anyway. The distribution of this flag across the dataset is the project's central empirical claim."
+    },
+    "source_tier": {
+      "type": "integer",
+      "values": {
+        "1": "Primary documents",
+        "2": "Sworn testimony, regulatory findings, official investigative reports",
+        "3": "Contemporaneous reporting by multiple independent outlets"
+      }
+    },
+    "status": {
+      "values": {
+        "provisional": "Coded at tier 2 or 3; records request outstanding",
+        "confirmed": "Coded against primary documents"
+      }
+    }
+  }
+}

@@ -1,0 +1,2 @@
+record_id,coded_date,codebook_version,sector,system_type,developer,deployer_type,jurisdiction,f1_position,f2_discretion,f3_reversibility,f3_bearer,f3_awareness,f4_failure_mode,f5_reach_failure,f6_intervention_layer,model_performed_as_designed,source_tier,status
+RF-001,2026-09-25,1.0,law enforcement,ALPR network,Flock Safety,state agency,US-FL,retrieve;flag,expanded,irreversible,third party,unaware,inference chain;absence,not a state actor;immunity;no defect,deployment rule;logging duty;procurement standard,TRUE,2,provisional
