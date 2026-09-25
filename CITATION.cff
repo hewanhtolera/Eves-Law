@@ -7,6 +7,7 @@ authors:
     family-names: Tolera
     affiliation: University of Maryland
 version: "1.0"
+doi: "10.5281/zenodo.XXXXXXX"
 date-released: "2026-09-25"
 license: CC-BY-4.0
 repository-code: "https://github.com/hewanhtolera/eves-law"
