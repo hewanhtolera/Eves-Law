@@ -3,6 +3,9 @@
 All changes to the codebook, the method, or a published record are recorded
 here with a date and a reason. Records are corrected in place and never
 silently revised or withdrawn.
+## [1.0.1] — 2026-09-25
+
+Archival release for DOI registration. No change to codebook, method, or records.
 
 ## [1.0] — 2026-09-25
 
