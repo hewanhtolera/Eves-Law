@@ -6,6 +6,8 @@ A coded dataset of AI deployment harms that existing law could not reach, and
 of the regulatory instrument that would have reached each one.
 
 **Status:** v1.0 codebook, 1 record. Active.
+**DOI:** [10.5281/zenodo.22966983](https://doi.org/10.5281/zenodo.22966983)
+
 
 ---
 
